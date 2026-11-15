@@ -83,5 +83,14 @@ For each row it shows the values and asks **[y]es / [s]kip / [q]uit**.
 ## Safety
 
 - The submit is **never retried**. If it fails or times out, the script stops the run, because the beacon may already be registered. Check your account's beacon list before running again.
-- Re-running the same sheet is safe: rows already registered are skipped.
+- Re-running the same sheet is safe: rows already logged as registered in `results.csv` are skipped.
+
+### Duplicate hex IDs are not prevented
+
+The HM Coastguard site accepts a hex ID that is already registered and creates a second registration. This is a known limitation of the site. The script only skips hex IDs that are logged as `registered` in its own `results.csv`. It doesn't check your account, so it will register a duplicate if the beacon was:
+
+- registered by hand on the site, or by someone else,
+- registered from another computer or folder, or before `results.csv` was deleted or moved.
+
+Before a run, check your account's beacon list and remove any rows that are already registered there.
 - The cookie gives access to your account. Don't share it, and delete `cookie.txt` after use.
