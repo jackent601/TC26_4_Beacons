@@ -163,6 +163,41 @@ def build_steps(cfg: dict):
         comms[k] = s_(c, k)
     comms["useId"] = uid
 
+    # Aviation (from the aviation HAR): the aircraft pages replace the vessel pages.
+    # Unticked boxes and an unchosen "dongle" radio aren't sent, as in the browser.
+    aircraft = {k: s_(u.get("aircraft", {}), k)
+                for k in ["maxCapacity", "aircraftManufacturer", "principalAirport",
+                          "secondaryAirport", "registrationMark", "hexAddress",
+                          "cnOrMsnNumber", "beaconPosition"]}
+    if u.get("aircraft", {}).get("dongle") in ("true", "false"):
+        aircraft["dongle"] = u["aircraft"]["dongle"]
+    aircraft["useId"] = uid
+    air_comms = {}
+    if c.get("vhfRadio"):
+        air_comms["vhfRadio"] = "true"
+    if c.get("satelliteTelephoneInput"):
+        air_comms["satelliteTelephone"] = "true"
+    if c.get("mobileTelephoneInput1") or c.get("mobileTelephoneInput2"):
+        air_comms["mobileTelephone"] = "true"
+    if c.get("otherCommunicationInput"):
+        air_comms["otherCommunication"] = "true"
+    for k in ["satelliteTelephoneInput", "mobileTelephoneInput1", "mobileTelephoneInput2",
+              "otherCommunicationInput"]:
+        air_comms[k] = s_(c, k)
+    air_comms["useId"] = uid
+
+    if env == "AVIATION":
+        use_pages = [("/register-a-beacon/about-the-aircraft" + q, aircraft),
+                     ("/register-a-beacon/aircraft-communications" + q, air_comms)]
+    else:
+        use_pages = [
+            ("/register-a-beacon/about-the-vessel" + q, {
+                k: s_(v, k) for k in ["maxCapacity", "vesselName", "beaconLocation",
+                                      "portLetterNumber", "homeport", "areaOfOperation",
+                                      "imoNumber", "ssrNumber", "rssNumber",
+                                      "officialNumber", "rigPlatformLocation"]} | {"useId": uid}),
+            ("/register-a-beacon/vessel-communications" + q, comms)]
+
     ec = {}
     for i in range(1, 4):
         p = contacts[i - 1] if i <= len(contacts) else {}
@@ -185,12 +220,7 @@ def build_steps(cfg: dict):
         ("/register-a-beacon/activity" + q, {
             "activity": s_(u, "activity"), "otherActivityText": s_(u, "otherActivityText"),
             "environment": env, "useId": uid}),
-        ("/register-a-beacon/about-the-vessel" + q, {
-            k: s_(v, k) for k in ["maxCapacity", "vesselName", "beaconLocation",
-                                  "portLetterNumber", "homeport", "areaOfOperation",
-                                  "imoNumber", "ssrNumber", "rssNumber",
-                                  "officialNumber", "rigPlatformLocation"]} | {"useId": uid}),
-        ("/register-a-beacon/vessel-communications" + q, comms),
+        *use_pages,
         ("/register-a-beacon/more-details" + q, {"moreDetails": s_(u, "moreDetails"), "useId": uid}),
         # additional-beacon-use has no form; "Continue" is a plain link to about-beacon-owner
         ("/register-a-beacon/about-beacon-owner", {
@@ -215,9 +245,9 @@ def next_data(body: str) -> dict:
 
 
 # --------------------------------------------------------------- sheet handling
-# Site values: MARITIME, AVIATION, LAND. Only MARITIME's pages have been recorded;
-# AVIATION and LAND lead to different pages and need a HAR of that flow to add.
-SUPPORTED_ENVIRONMENTS = ("MARITIME",)
+# Site values: MARITIME, AVIATION, LAND. MARITIME and AVIATION have been recorded;
+# LAND leads to different pages (land-communications) and needs a HAR of that flow.
+SUPPORTED_ENVIRONMENTS = ("MARITIME", "AVIATION")
 
 # column header -> description (all required). Headers are matched case-insensitively.
 COLUMNS = {
@@ -225,7 +255,7 @@ COLUMNS = {
     "model": "Beacon model",
     "hexId": "Beacon HEX ID / UIN",
     "serialNumber": "Manufacturer serial number",
-    "environment": "Environment (MARITIME)",
+    "environment": "Environment (MARITIME or AVIATION)",
     "activityDescription": "Description of the use (activity = Other)",
     "moreDetails": "More details that could help in a search",
     "ownerName": "Owner full name",

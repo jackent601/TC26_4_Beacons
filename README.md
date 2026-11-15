@@ -26,7 +26,7 @@ Keep phone-number cells as text so they keep their leading 0.
 
 Every beacon is registered as **`environment` → Commercial → Other**, with `activityDescription` as the description. It has one use per beacon and a UK owner address.
 
-`environment` currently accepts only `MARITIME`. The site also offers `AVIATION` and `LAND`, but those lead to different pages that haven't been mapped yet. Rows with those values are skipped with a message, and nothing is sent to the site.
+`environment` accepts `MARITIME` or `AVIATION`. The site also offers `LAND`, but that leads to pages that haven't been mapped yet. Rows with `LAND` (or anything else) are skipped with a message, and nothing is sent to the site.
 
 ## Get your cookie
 
@@ -67,8 +67,8 @@ For each row it shows the values and asks **[y]es / [s]kip / [q]uit**.
       3. `beacon-use?useId=0`: `environment`
       4. `purpose?useId=0`: Commercial
       5. `activity?useId=0`: Other plus the description
-      6. `about-the-vessel?useId=0`: left blank
-      7. `vessel-communications?useId=0`: left blank
+      6. `about-the-vessel?useId=0` (MARITIME) or `about-the-aircraft?useId=0` (AVIATION): left blank
+      7. `vessel-communications?useId=0` (MARITIME) or `aircraft-communications?useId=0` (AVIATION): left blank
       8. `more-details?useId=0`
       9. `about-beacon-owner`: name, telephone, email
       10. `beacon-owner-address`: United Kingdom
