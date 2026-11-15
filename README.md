@@ -26,7 +26,9 @@ Keep phone-number cells as text so they keep their leading 0.
 
 Every beacon is registered as **`environment` → Commercial → Other**, with `activityDescription` as the description. It has one use per beacon and a UK owner address.
 
-`environment` accepts `MARITIME` or `AVIATION`. The site also offers `LAND`, but that leads to pages that haven't been mapped yet. Rows with `LAND` (or anything else) are skipped with a message, and nothing is sent to the site.
+`environment` accepts `MARITIME` or `AVIATION`. Rows with `LAND` (or anything else) are skipped with a message, and nothing is sent to the site.
+
+**LAND is out of scope for this first version.** The site requires a location for a land beacon, which this sheet doesn't collect. Register land beacons by hand on the site for now.
 
 ## Get your cookie
 
