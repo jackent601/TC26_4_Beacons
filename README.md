@@ -35,10 +35,17 @@ Every beacon is registered as **`environment` → Commercial → Other**, with `
 The script signs in using your browser's session cookie:
 
 1. Sign in at <https://register-406-beacons.service.gov.uk>.
-2. Press **F12** and open the **Network** tab.
+2. Open developer tools: press **F12**, or use the browser menu (**⋮** or **…**, top right) → **More tools** → **Developer tools**. Then open the **Network** tab.
+
+   ![Opening developer tools from the browser menu: (a) the ⋮ button, (b) More tools, (c) Developer tools](images/open-devtools.svg)
+
 3. Refresh the page (**F5**).
 4. Click the first request in the list.
 5. Under **Request Headers**, right-click **cookie** and choose **Copy value**.
+
+![The Network tab (2), the first request selected (4), and Copy value on the cookie header (5)](images/copy-cookie.svg)
+
+*The pictures use a dummy site. Menus differ slightly between browsers (Edge shows **…** instead of **⋮**).*
 
 Use the Network tab, not `document.cookie` in the Console: the sign-in cookies are hidden from it. The cookie expires when you sign out or your session times out. The script asks for a new one if that happens.
 

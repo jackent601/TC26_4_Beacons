@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="560" viewBox="0 0 920 560" font-family="Segoe UI, system-ui, -apple-system, sans-serif" font-size="13">
+  <style>
+    .t { fill: #202124; }
+    .k { fill: #5f6368; font-size: 12px; }
+    .sep { stroke: #dadce0; stroke-width: 1; }
+    .badge { fill: #e8590c; }
+    .bt { fill: #fff; font-weight: 700; font-size: 13px; text-anchor: middle; }
+  </style>
+  <rect width="920" height="560" fill="#ffffff"/>
+
+  <!-- browser window -->
+  <rect x="0.5" y="0.5" width="900" height="550" rx="8" fill="#fafafa" stroke="#bdc1c6"/>
+  <path d="M8 0.5 H893 a8 8 0 0 1 8 8 V40 H0.5 V8.5 a8 8 0 0 1 8 -8 z" fill="#dee1e6"/>
+  <path d="M14 40 V16 a8 8 0 0 1 8 -8 H226 a8 8 0 0 1 8 8 V40 z" fill="#ffffff"/>
+  <circle cx="32" cy="25" r="6" fill="#2b6777"/>
+  <text x="46" y="29" class="t" font-size="12">Example Service</text>
+  <text x="214" y="29" class="k">✕</text>
+
+  <!-- toolbar -->
+  <rect x="1" y="40" width="899" height="44" fill="#ffffff"/>
+  <line x1="1" y1="84" x2="900" y2="84" class="sep"/>
+  <text x="18" y="68" class="k" font-size="16">←</text>
+  <text x="44" y="68" class="k" font-size="16">→</text>
+  <text x="70" y="68" class="k" font-size="16">⟳</text>
+  <rect x="100" y="50" width="720" height="26" rx="13" fill="#f1f3f4"/>
+  <text x="118" y="67" class="t">example.test/account</text>
+  <!-- three-dot menu button, highlighted -->
+  <circle cx="862" cy="63" r="16" fill="#e8eaed" stroke="#e8590c" stroke-width="2.5"/>
+  <circle cx="862" cy="56" r="2" fill="#3c4043"/>
+  <circle cx="862" cy="63" r="2" fill="#3c4043"/>
+  <circle cx="862" cy="70" r="2" fill="#3c4043"/>
+  <circle cx="834" cy="44" r="11" class="badge"/><text x="834" y="48.5" class="bt">a</text>
+
+  <!-- dummy page -->
+  <rect x="1" y="85" width="899" height="46" fill="#2b6777"/>
+  <text x="24" y="114" fill="#ffffff" font-size="17" font-weight="600">Example Service</text>
+  <text x="24" y="172" class="t" font-size="22" font-weight="600">Your account</text>
+  <rect x="24" y="190" width="300" height="10" rx="3" fill="#dadce0"/>
+  <rect x="24" y="210" width="260" height="10" rx="3" fill="#dadce0"/>
+  <rect x="24" y="242" width="250" height="90" rx="6" fill="#ffffff" stroke="#dadce0"/>
+  <rect x="40" y="260" width="140" height="10" rx="3" fill="#c4c7c5"/>
+  <rect x="40" y="280" width="200" height="8" rx="3" fill="#e3e3e3"/>
+  <rect x="40" y="296" width="170" height="8" rx="3" fill="#e3e3e3"/>
+  <rect x="24" y="346" width="250" height="90" rx="6" fill="#ffffff" stroke="#dadce0"/>
+  <rect x="40" y="364" width="120" height="10" rx="3" fill="#c4c7c5"/>
+  <rect x="40" y="384" width="200" height="8" rx="3" fill="#e3e3e3"/>
+  <rect x="40" y="400" width="150" height="8" rx="3" fill="#e3e3e3"/>
+
+  <!-- main menu -->
+  <rect x="600" y="82" width="280" height="348" rx="8" fill="#ffffff" stroke="#dadce0" filter="drop-shadow(0 2px 6px rgba(0,0,0,0.2))"/>
+  <text x="620" y="110" class="t">New tab</text><text x="860" y="110" class="k" text-anchor="end">Ctrl+T</text>
+  <text x="620" y="140" class="t">New window</text><text x="860" y="140" class="k" text-anchor="end">Ctrl+N</text>
+  <line x1="600" y1="154" x2="880" y2="154" class="sep"/>
+  <text x="620" y="180" class="t">History</text><text x="860" y="180" class="k" text-anchor="end">▸</text>
+  <text x="620" y="210" class="t">Downloads</text><text x="860" y="210" class="k" text-anchor="end">Ctrl+J</text>
+  <text x="620" y="240" class="t">Bookmarks</text><text x="860" y="240" class="k" text-anchor="end">▸</text>
+  <line x1="600" y1="254" x2="880" y2="254" class="sep"/>
+  <text x="620" y="280" class="t">Print…</text><text x="860" y="280" class="k" text-anchor="end">Ctrl+P</text>
+  <text x="620" y="310" class="t">Find…</text><text x="860" y="310" class="k" text-anchor="end">Ctrl+F</text>
+  <rect x="601" y="320" width="278" height="30" fill="#fde7d9"/>
+  <rect x="601" y="320" width="4" height="30" fill="#e8590c"/>
+  <text x="620" y="340" class="t" font-weight="600">More tools</text><text x="860" y="340" class="t" text-anchor="end">▸</text>
+  <line x1="600" y1="356" x2="880" y2="356" class="sep"/>
+  <text x="620" y="382" class="t">Settings</text>
+  <text x="620" y="412" class="t">Help</text><text x="860" y="412" class="k" text-anchor="end">▸</text>
+  <circle cx="898" cy="335" r="11" class="badge"/><text x="898" y="339.5" class="bt">b</text>
+
+  <!-- More tools submenu -->
+  <rect x="330" y="316" width="266" height="214" rx="8" fill="#ffffff" stroke="#dadce0" filter="drop-shadow(0 2px 6px rgba(0,0,0,0.2))"/>
+  <text x="350" y="342" class="t">Save page as…</text><text x="580" y="342" class="k" text-anchor="end">Ctrl+S</text>
+  <text x="350" y="372" class="t">Create shortcut…</text>
+  <line x1="330" y1="386" x2="596" y2="386" class="sep"/>
+  <text x="350" y="412" class="t">Clear browsing data…</text>
+  <text x="350" y="442" class="t">Extensions</text>
+  <text x="350" y="472" class="t">Task manager</text><text x="580" y="472" class="k" text-anchor="end">Shift+Esc</text>
+  <line x1="330" y1="486" x2="596" y2="486" class="sep"/>
+  <rect x="331" y="492" width="264" height="30" fill="#fde7d9"/>
+  <rect x="331" y="492" width="4" height="30" fill="#e8590c"/>
+  <text x="350" y="512" class="t" font-weight="600">Developer tools</text><text x="580" y="512" class="k" text-anchor="end">Ctrl+Shift+I</text>
+  <circle cx="316" cy="507" r="11" class="badge"/><text x="316" y="511.5" class="bt">c</text>
+</svg>

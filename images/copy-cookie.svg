@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="590" viewBox="0 0 920 590" font-family="Segoe UI, system-ui, -apple-system, sans-serif" font-size="13">
+  <style>
+    .t { fill: #202124; }
+    .k { fill: #5f6368; font-size: 12px; }
+    .b { fill: #202124; font-weight: 600; }
+    .sep { stroke: #dadce0; stroke-width: 1; }
+    .badge { fill: #e8590c; }
+    .bt { fill: #fff; font-weight: 700; font-size: 13px; text-anchor: middle; }
+  </style>
+  <rect width="920" height="590" fill="#ffffff"/>
+
+  <!-- browser window -->
+  <rect x="0.5" y="0.5" width="900" height="580" rx="8" fill="#fafafa" stroke="#bdc1c6"/>
+  <path d="M8 0.5 H893 a8 8 0 0 1 8 8 V40 H0.5 V8.5 a8 8 0 0 1 8 -8 z" fill="#dee1e6"/>
+  <path d="M14 40 V16 a8 8 0 0 1 8 -8 H226 a8 8 0 0 1 8 8 V40 z" fill="#ffffff"/>
+  <circle cx="32" cy="25" r="6" fill="#2b6777"/>
+  <text x="46" y="29" class="t" font-size="12">Example Service</text>
+  <text x="214" y="29" class="k">✕</text>
+  <rect x="1" y="40" width="899" height="44" fill="#ffffff"/>
+  <line x1="1" y1="84" x2="900" y2="84" class="sep"/>
+  <text x="18" y="68" class="k" font-size="16">←</text>
+  <text x="44" y="68" class="k" font-size="16">→</text>
+  <text x="70" y="68" class="k" font-size="16">⟳</text>
+  <rect x="100" y="50" width="720" height="26" rx="13" fill="#f1f3f4"/>
+  <text x="118" y="67" class="t">example.test/account</text>
+  <circle cx="862" cy="56" r="2" fill="#3c4043"/>
+  <circle cx="862" cy="63" r="2" fill="#3c4043"/>
+  <circle cx="862" cy="70" r="2" fill="#3c4043"/>
+
+  <!-- dummy page -->
+  <rect x="1" y="85" width="899" height="46" fill="#2b6777"/>
+  <text x="24" y="114" fill="#ffffff" font-size="17" font-weight="600">Example Service</text>
+  <text x="24" y="166" class="t" font-size="22" font-weight="600">Your account</text>
+  <rect x="24" y="182" width="300" height="10" rx="3" fill="#dadce0"/>
+  <rect x="24" y="202" width="260" height="10" rx="3" fill="#dadce0"/>
+
+  <!-- developer tools, docked at the bottom -->
+  <rect x="1" y="230" width="899" height="350" fill="#ffffff"/>
+  <line x1="1" y1="230" x2="900" y2="230" stroke="#bdc1c6"/>
+  <rect x="1" y="231" width="899" height="31" fill="#f1f3f4"/>
+  <text x="16" y="251" class="t">Elements</text>
+  <text x="96" y="251" class="t">Console</text>
+  <text x="168" y="251" class="t">Sources</text>
+  <rect x="228" y="231" width="78" height="31" fill="#ffffff"/>
+  <rect x="228" y="259" width="78" height="3" fill="#1a73e8"/>
+  <text x="242" y="251" fill="#1a73e8" font-weight="600">Network</text>
+  <text x="322" y="251" class="t">Performance</text>
+  <text x="420" y="251" class="t">Application</text>
+  <circle cx="306" cy="232" r="11" class="badge"/><text x="306" y="236.5" class="bt">2</text>
+  <line x1="1" y1="262" x2="900" y2="262" class="sep"/>
+
+  <!-- filter row -->
+  <rect x="12" y="268" width="180" height="18" rx="3" fill="#f1f3f4"/>
+  <text x="20" y="281" class="k">Filter</text>
+  <text x="212" y="281" class="k">Refresh the page (F5) if the list is empty</text>
+  <line x1="1" y1="290" x2="900" y2="290" class="sep"/>
+
+  <!-- request list -->
+  <rect x="1" y="290" width="299" height="24" fill="#f8f9fa"/>
+  <text x="12" y="306" class="k">Name</text>
+  <line x1="1" y1="314" x2="300" y2="314" class="sep"/>
+  <rect x="1" y="314" width="299" height="26" fill="#d2e3fc"/>
+  <text x="12" y="332" class="t" font-weight="600">account</text>
+  <text x="12" y="358" class="t">main.css</text>
+  <text x="12" y="384" class="t">app.js</text>
+  <text x="12" y="410" class="t">logo.svg</text>
+  <text x="12" y="436" class="t">fonts.woff2</text>
+  <text x="12" y="462" class="t">favicon.ico</text>
+  <circle cx="284" cy="327" r="11" class="badge"/><text x="284" y="331.5" class="bt">4</text>
+  <line x1="300" y1="290" x2="300" y2="580" stroke="#cbcdd1"/>
+
+  <!-- request details -->
+  <rect x="301" y="290" width="599" height="24" fill="#f8f9fa"/>
+  <text x="312" y="306" class="k">✕</text>
+  <text x="336" y="306" fill="#1a73e8" font-weight="600">Headers</text>
+  <rect x="330" y="311" width="62" height="3" fill="#1a73e8"/>
+  <text x="408" y="306" class="t">Payload</text>
+  <text x="470" y="306" class="t">Preview</text>
+  <text x="532" y="306" class="t">Response</text>
+  <line x1="300" y1="314" x2="900" y2="314" class="sep"/>
+
+  <text x="316" y="338" class="b">▼ General</text>
+  <text x="332" y="360" class="k">Request URL</text><text x="470" y="360" class="t">https://example.test/account</text>
+  <text x="332" y="380" class="k">Request Method</text><text x="470" y="380" class="t">GET</text>
+  <text x="332" y="400" class="k">Status Code</text><text x="470" y="400" class="t">200 OK</text>
+
+  <text x="316" y="430" class="b">▼ Request Headers</text>
+  <text x="332" y="452" class="k">accept</text><text x="470" y="452" class="t">text/html,application/xhtml+xml</text>
+  <text x="332" y="472" class="k">accept-language</text><text x="470" y="472" class="t">en-GB,en</text>
+  <rect x="320" y="479" width="440" height="22" rx="3" fill="#fde7d9"/>
+  <text x="332" y="494" class="b">cookie</text><text x="470" y="494" class="t">session-token=abc123…; theme=light</text>
+  <text x="332" y="516" class="k">user-agent</text><text x="470" y="516" class="t">Mozilla/5.0 (Windows NT 10.0) …</text>
+
+  <!-- right-click menu -->
+  <rect x="600" y="500" width="180" height="62" rx="6" fill="#ffffff" stroke="#dadce0" filter="drop-shadow(0 2px 6px rgba(0,0,0,0.2))"/>
+  <rect x="601" y="504" width="178" height="26" fill="#fde7d9"/>
+  <rect x="601" y="504" width="4" height="26" fill="#e8590c"/>
+  <text x="618" y="522" class="t" font-weight="600">Copy value</text>
+  <text x="618" y="549" class="t">Copy header</text>
+  <circle cx="796" cy="517" r="11" class="badge"/><text x="796" y="521.5" class="bt">5</text>
+</svg>
